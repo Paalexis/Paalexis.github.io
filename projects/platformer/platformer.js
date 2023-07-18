@@ -22,22 +22,26 @@ $(function () {
     createPlatform(canvas.width, -50, 50, canvas.height + 100);
 
     /**
-     * Uncomment the loops below to add a "grid" to your platformer game's screen
+     * Uncomment line 32 below to add a "grid" to your platformer game's screen
      * The grid will place both horizontal and vertical platforms incremented 100 pixels apart
      * This can give you a better idea of where to create new platforms
      * You won't be able to play the game while these lines are uncommented
-     * Comment the lines out to remove the grid
+     * Comment line 32 out to remove the grid
      */
 
-    // Loop to create vertical grid lines
-    // for (let i = 100; i < canvas.width; i += 100) {
-    //   createPlatform(i, 0, 1, canvas.height);
-    // }
+    // createGrid();
 
-    // Loop to create horizontal gride lines
-    // for (let i = 100; i < canvas.height; i += 100) {
-    //   createPlatform(0, i, canvas.width, 1);
-    // }
+    function createGrid() {
+      // Loop to create vertical grid lines
+      for (let i = 100; i < canvas.width; i += 100) {
+        createPlatform(i, 0, 1, canvas.height);
+      }
+  
+      // Loop to create horizontal gride lines
+      for (let i = 100; i < canvas.height; i += 100) {
+        createPlatform(0, i, canvas.width, 1);
+      }
+    }
 
     /////////////////////////////////////////////////
     //////////ONLY CHANGE BELOW THIS POINT///////////
@@ -52,7 +56,11 @@ createPlatform(30,650,100,25);//first platform
 
 createPlatform(200,550,100,25);//second platform
 
-createPlatform(550,350,100,25);//
+createPlatform(550,350,100,25);//third platform
+
+createPlatform(600,400,100,25);//fourth platform
+
+createPlatform(700,500,100,25);//fifth platform
 
 
     
@@ -62,8 +70,9 @@ createPlatform(550,350,100,25);//
     // Your collectable choices are 'database' 'diamond' 'grace' 'kennedi' 'max' and 'steve'; more can be added if you wish
     // example usage: createCollectable(type, x, y, gravity, bounce)
 
-
-
+createCollectable("kennedi", 100, 100, .5, 1)
+createCollectable("max", 500, 300, .2, 1)
+createCollectable("steve", 800, 600, .2, 1)
 
     // TODO 3
     // Create cannons
@@ -71,9 +80,11 @@ createPlatform(550,350,100,25);//
     // Your wall choices are: 'top' 'left' 'right' and 'bottom'
     // example usage: createCannon(side, position, delay, width, height)
 
-
-
-
+createCannon("top",450,3300)
+createCannon("left", 450, 4500)
+createCannon("right", 500, 5800)
+createCannon("bottom", 250, 6000)
+  
     /////////////////////////////////////////////////
     //////////ONLY CHANGE ABOVE THIS POINT///////////
     /////////////////////////////////////////////////
